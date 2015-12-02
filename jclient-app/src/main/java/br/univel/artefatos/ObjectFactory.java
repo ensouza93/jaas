@@ -24,22 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SayHelloResponse_QNAME = new QName("http://univel.br/", "sayHelloResponse");
     private final static QName _SayHello_QNAME = new QName("http://univel.br/", "sayHello");
+    private final static QName _SayHelloResponse_QNAME = new QName("http://univel.br/", "sayHelloResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: br.univel.artefatos
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link SayHello }
-     * 
-     */
-    public SayHello createSayHello() {
-        return new SayHello();
     }
 
     /**
@@ -51,12 +43,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
+     * Create an instance of {@link SayHello }
      * 
      */
-    @XmlElementDecl(namespace = "http://univel.br/", name = "sayHelloResponse")
-    public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
-        return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
+    public SayHello createSayHello() {
+        return new SayHello();
     }
 
     /**
@@ -66,6 +57,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://univel.br/", name = "sayHello")
     public JAXBElement<SayHello> createSayHello(SayHello value) {
         return new JAXBElement<SayHello>(_SayHello_QNAME, SayHello.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://univel.br/", name = "sayHelloResponse")
+    public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
+        return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
     }
 
 }
