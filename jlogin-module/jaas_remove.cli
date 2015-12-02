@@ -1,0 +1,19 @@
+# Batch script to remove the quickstart-domain security domain from the JBoss server
+
+# Start batching commands
+batch
+
+# Update remoting connector security realm to be used for external EJB calls.
+/subsystem=remoting/http-connector=http-remoting-connector:write-attribute(name=security-realm,value=ApplicationRealm)
+
+# Remove the security realm
+/core-service=management/security-realm=FormAuthRealm:remove
+
+# Remove the security domain
+/subsystem=security/security-domain=form-auth:remove
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+:reload

@@ -1,0 +1,21 @@
+# Batch script to add and configure the quickstart-domain security domain in the JBoss server
+
+# Start batching commands
+batch
+
+# Add and configure the security domain.
+/subsystem=security/security-domain=form-auth:add(cache-type=default)
+/subsystem=security/security-domain=form-auth/authentication=classic:add(login-modules=[{code=br.univel.jaas.LoginModule,flag=required,module=br.univel}])
+
+# Add a new security realm that is used when external connections are used for Remote EJB calls.
+/core-service=management/security-realm=FormAuthRealm:add
+/core-service=management/security-realm=FormAuthRealm/authentication=jaas:add(name=form-auth)
+
+# Update remoting connector security realm to be used for external EJB calls.
+/subsystem=remoting/http-connector=http-remoting-connector:write-attribute(name=security-realm,value=FormAuthRealm)
+
+# Run the batch commands
+run-batch
+
+# Reload the server configuration
+:reload
