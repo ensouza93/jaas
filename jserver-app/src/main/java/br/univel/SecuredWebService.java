@@ -34,7 +34,9 @@ public class SecuredWebService {
 		try {
 			securityInfoEjb = securedEJB.getHello();
 		} catch (EJBAccessException ejbAccessException) {
-			securityInfoEjb = "O usuário " + principal.toString() + " não tem acesso ao EJB.";
+			securityInfoEjb = "O usuário " 
+						+ principal.toString() 
+						+ " não tem acesso ao EJB.";
 		}
 
 		return "Webservice "+ principal.toString() + "(" + securityInfoEjb + ")";

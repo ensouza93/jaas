@@ -19,6 +19,8 @@ public class SecuredEJB {
 
 	public String getSecurityInfo() {
 		Principal principal = ctx.getCallerPrincipal();
-		return "Seguro(Seja bem vindo " + principal.toString() + "! Acesso autorizado!)";
+		return "Seguro(Seja bem vindo " 
+				+ principal.toString() 
+				+ "! Acesso autorizado!)";
 	}
 }
