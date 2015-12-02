@@ -9,7 +9,7 @@ import br.univel.artefatos.SecuredWebServiceService;
 public class TesteWebService {
 
 	private static final String USER_NAME = "user";
-	private static final String PASSWORD = "user";
+	private static final String PASSWORD = "user1";
 
 	public static void main(String[] args) {
 

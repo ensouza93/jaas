@@ -134,7 +134,7 @@ public class TesteEjbRemoto {
 	public static void main(String[] args) throws Exception {
 
 		System.out.println("\n\nTestes com senha correta\n\n");
-		new TesteEjbRemoto().performTestingClientLoginModule("user", "user");
+		new TesteEjbRemoto().performTestingClientLoginModule("fernando", "fernando");
 
 		System.out.println("\n\nTestes com senha errada\n\n");
 		new TesteEjbRemoto().performTestingClientLoginModule("user", "pass");
